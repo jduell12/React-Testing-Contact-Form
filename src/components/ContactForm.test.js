@@ -16,7 +16,7 @@ test('Enters data into the form and submits', ()=>{
    const emailInput = screen.getByPlaceholderText(/bluebill1049@hotmail.com/i);
    const messageInput = screen.getByLabelText(/message/i);
 
-   fireEvent.change(firstNameInput, {target: {value:'jes'}});
+   fireEvent.change(firstNameInput, {target: {value:'Jessica'}});
    fireEvent.change(lastNameInput, {target: {value: 'Duell'}});
    fireEvent.change(emailInput, {target: {value: 'something@gmail.com'}});
    fireEvent.change(messageInput, {target: {value: 'A message'}});
@@ -36,6 +36,6 @@ test('Enters data into the form and submits', ()=>{
         1. query for new text
         2. assert that it's being rendered 
     */
-   screen.getByText(/jes/i);
+   screen.findByText(/jessica/i);
    
 })
