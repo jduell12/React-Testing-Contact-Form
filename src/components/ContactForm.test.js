@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import ContactForm from './ContactForm';
 
 
-test('Enters data into the form and submits - MVP', ()=>{
+test('Enters data into the form and submits - MVP', async()=>{
     render(<ContactForm />)
 
     //type into all input fields 
@@ -36,9 +36,16 @@ test('Enters data into the form and submits - MVP', ()=>{
         1. query for new text
         2. assert that it's being rendered 
     */
-   screen.findByText(/jessica/i);
-   screen.findByText(/duell/i);
-   screen.findByText(/something@gmail.com/i);
-   screen.findByText(/a message/i);
+   const firstName = await screen.findByText(/jessica/i);
+   expect(firstName).toBeInTheDocument();
+
+   const lastName = await screen.findByText(/duell/i);
+   expect(lastName).toBeInTheDocument();
+
+   const email = await screen.findByText(/something@gmail.com/i);
+   expect(email).toBeInTheDocument();
+
+   const message = await screen.findByText(/a message/i);
+   expect(message).toBeInTheDocument();
    
 })
