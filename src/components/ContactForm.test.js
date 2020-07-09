@@ -12,8 +12,14 @@ test('Enters data into the form and submits', ()=>{
     */
    const firstNameInput = screen.getByPlaceholderText(/edd/i);
    const lastNameInput = screen.getByPlaceholderText(/burke/i);
-   const emailInput = screen.getByText(/email/i);
-   const messageInput = screen.getByText(/message/i);
+   const emailInput = screen.getByPlaceholderText(/bluebill1049@hotmail.com/i);
+   const messageInput = screen.getByLabelText(/message/i);
+
+   fireEvent.change(firstNameInput, {target: {value:'Jessica'}});
+   fireEvent.change(lastNameInput, {target: {value: 'Duell'}});
+   fireEvent.change(emailInput, {target: {value: 'something@gmail.com'}});
+   fireEvent.change(messageInput, {target: {value: 'A message'}});
+
 
     //click submit button 
     /*
