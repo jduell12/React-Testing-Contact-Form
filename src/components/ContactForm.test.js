@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import ContactForm from './ContactForm';
 
 
-test('Enters data into the form and submits', ()=>{
+test('Enters data into the form and submits - MVP', ()=>{
     render(<ContactForm />)
 
     //type into all input fields 
@@ -37,5 +37,8 @@ test('Enters data into the form and submits', ()=>{
         2. assert that it's being rendered 
     */
    screen.findByText(/jessica/i);
+   screen.findByText(/duell/i);
+   screen.findByText(/something@gmail.com/i);
+   screen.findByText(/a message/i);
    
 })
